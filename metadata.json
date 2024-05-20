@@ -1,0 +1,9 @@
+{
+  "name": "Arvelie Clock",
+  "description": "Overrides Gnome's clock format with Arvelie.",
+  "uuid": "arvelieclock@vicente015.dev",
+  "shell-version": [
+    "45",
+    "46"
+  ]
+}
