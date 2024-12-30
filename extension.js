@@ -58,11 +58,14 @@ export default class ArvelieClock extends Extension {
             const y =
                 fullYearStr.slice(0, 2) === '20' ? fullYearStr.slice(2) : fullYearStr
 
-            if (date.get_month() === 12 && date.get_day_of_month() === 31) {
+            const isYearDay = date.get_day_of_year() === 365
+            const isLeapDay = date.get_day_of_year() === 366
+
+            if (isYearDay) {
                 return y + '+00' // year day
             }
 
-            if (GLib.Date.is_leap_year(date.get_year()) && date.get_month() === 2 && date.get_day_of_month() === 29) {
+            if (isLeapDay) {
                 return y + '+01' // leap day
             }
 
